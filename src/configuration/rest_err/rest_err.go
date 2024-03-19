@@ -22,7 +22,7 @@ func (r *RestErr) Error() string {
 
 // models errs
 
-func newRestErr(message, err string, code int64, causes []Causes) *RestErr {
+func NewRestErr(message, err string, code int64, causes []Causes) *RestErr {
 	return &RestErr{
 		Message: message,
 		Err:     err,
@@ -48,7 +48,7 @@ func NewBadRequestErrorValidationError(message string, causes []Causes) *RestErr
 	}
 }
 
-func newInternalServerError(message string) *RestErr {
+func NewInternalServerError(message string) *RestErr {
 	return &RestErr{
 		Message: message,
 		Err:     "internal_server_error",
