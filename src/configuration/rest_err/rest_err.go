@@ -7,7 +7,7 @@ import (
 type RestErr struct { // custom errors -> json
 	Message string   `json:"message"`
 	Err     string   `json:"error"`
-	Code    int64    `json:"code"`
+	Code    int      `json:"code"`
 	Causes  []Causes `json:"causes"`
 }
 
@@ -22,7 +22,7 @@ func (r *RestErr) Error() string {
 
 // models errs
 
-func NewRestErr(message, err string, code int64, causes []Causes) *RestErr {
+func NewRestErr(message, err string, code int, causes []Causes) *RestErr {
 	return &RestErr{
 		Message: message,
 		Err:     err,
